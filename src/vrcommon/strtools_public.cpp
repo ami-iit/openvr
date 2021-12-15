@@ -9,7 +9,7 @@
 #include <functional>
 #include <locale>
 #include <codecvt>
-#include <vrcore/assert.h>
+#include <vrcore/vrassert.h>
 
 #if defined( _WIN32 )
 #include <windows.h>
