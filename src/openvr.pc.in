@@ -7,5 +7,5 @@ Name: openvr
 Description: OpenVR is an API and runtime that allos access to VR hardware.
 Version: @OPENVR_VERSION@
 
-Libs: -L${libdir} -lopenvr_api -ldl
+Libs: -L${libdir} @OPENVR_LIBS_PC@
 Cflags: -I${includedir}
