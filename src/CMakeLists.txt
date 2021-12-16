@@ -101,7 +101,11 @@ endif()
 target_link_libraries(${LIBNAME} ${EXTRA_LIBS} ${CMAKE_DL_LIBS})
 target_include_directories(${LIBNAME} PUBLIC ${OPENVR_HEADER_DIR})
 
-install(TARGETS ${LIBNAME} DESTINATION lib)
+install(
+    TARGETS ${LIBNAME}
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    RUNTIME DESTINATION bin)
 install(FILES ${PUBLIC_HEADER_FILES} DESTINATION include/openvr)
 
 # Generate a .pc file
