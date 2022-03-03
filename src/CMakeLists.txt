@@ -108,10 +108,6 @@ install(
     RUNTIME DESTINATION bin)
 install(FILES ${PUBLIC_HEADER_FILES} DESTINATION include/openvr)
 
-# Generate a .pc file
-set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/share/pkgconfig" CACHE PATH "Installation directory for pkgconfig (.pc) files")
-CONFIGURE_FILE("openvr.pc.in" "openvr.pc" @ONLY)
-
 if(UNIX)
     set(OPENVR_LIBS_PC "-lopenvr_api -ldl")
 else()
@@ -123,6 +119,10 @@ else()
         set(OPENVR_LIBS_PC "-lopenvr_api")
     endif()
 endif()
+
+# Generate a .pc file
+set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/share/pkgconfig" CACHE PATH "Installation directory for pkgconfig (.pc) files")
+CONFIGURE_FILE("openvr.pc.in" "openvr.pc" @ONLY)
 
 set(OPENVR_PC ${CMAKE_CURRENT_BINARY_DIR}/openvr.pc)
 if(NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL )
