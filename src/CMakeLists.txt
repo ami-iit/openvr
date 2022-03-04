@@ -121,7 +121,7 @@ else()
 endif()
 
 # Generate a .pc file
-set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/share/pkgconfig" CACHE PATH "Installation directory for pkgconfig (.pc) files")
+set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/share/pkgconfig")
 CONFIGURE_FILE("openvr.pc.in" "openvr.pc" @ONLY)
 
 set(OPENVR_PC ${CMAKE_CURRENT_BINARY_DIR}/openvr.pc)
